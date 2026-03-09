@@ -9,8 +9,7 @@ de gastos.
 
 public void main(){
 
-    Balanco trimestre;
-    trimestre = new Balanco();
+    Balanco trimestre = new Balanco();
 
     trimestre.setJaneiro(15000);
     trimestre.setFevereiro(23000);
@@ -20,5 +19,5 @@ public void main(){
     IO.println(trimestre.somar());
 
     IO.println("A media dos gastos no trimestre é:");
-    IO.println(trimestre.calcMedia());
+    IO.println(trimestre.media());
 }

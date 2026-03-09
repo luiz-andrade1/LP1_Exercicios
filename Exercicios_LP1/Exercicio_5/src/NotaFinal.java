@@ -31,10 +31,17 @@ public class NotaFinal {
         if(notas.calcNota()>5.9){
             IO.println("Aprovado");}
         else
-        {IO.println("Reprovado");}
+        {IO.println("Reprovado por nota regular.\nDigitar nota do exame:");
+        notas.setExame(ler.nextDouble());
+            if (notas.calcNota()<5.9){
+            IO.println("Reprovado");}
+            else {IO.println("Aprovado");
+            IO.println("E a nota foi:");
+            IO.println(notas.calcNota());
+        }
+        }
 
-        IO.println("E a média foi:");
-        IO.println(notas.calcNota());
+
 
     }
 
