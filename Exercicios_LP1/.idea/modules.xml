@@ -9,6 +9,9 @@
       <module fileurl="file://$PROJECT_DIR$/Exercicio_5/Exercicio_5.iml" filepath="$PROJECT_DIR$/Exercicio_5/Exercicio_5.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exercicio_6/Exercicio_6.iml" filepath="$PROJECT_DIR$/Exercicio_6/Exercicio_6.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exercicios_LP1.iml" filepath="$PROJECT_DIR$/Exercicios_LP1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercicio_6/imgFarmacia/imgFarmacia.iml" filepath="$PROJECT_DIR$/Exercicio_6/imgFarmacia/imgFarmacia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercicio_6/imgFeira/imgFeira.iml" filepath="$PROJECT_DIR$/Exercicio_6/imgFeira/imgFeira.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercicio_6/imgSalao/imgSalao.iml" filepath="$PROJECT_DIR$/Exercicio_6/imgSalao/imgSalao.iml" />
     </modules>
   </component>
 </project>
