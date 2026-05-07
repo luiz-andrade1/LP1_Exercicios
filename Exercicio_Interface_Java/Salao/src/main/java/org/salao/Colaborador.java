@@ -16,19 +16,19 @@ public class Colaborador {
     public String getNome(){
         return nome;
     }
-    public void setNome(){
+    public void setNome(String nome){
         this.nome = nome;
     }
     public String getFuncao(){
         return funcao;
     }
-    public void setFuncao(){
+    public void setFuncao(String funcao){
         this.funcao = funcao;
     }
     public Double getSalario(){
         return salario;
     }
-    public void setSalario(){
+    public void setSalario(Double salario){
         this.salario = salario;
     }
 
@@ -36,12 +36,9 @@ public class Colaborador {
         return (getNome()+" esta trabalhando como: "+getFuncao());
     }
     public String promocao(){
-        Colaborador e = new Colaborador(getNome(),getFuncao(),getSalario());
-        e.setSalario();
-        salario = salario + 200.00;
+        setSalario(salario + 200.00);
         return (getNome()+" foi promovido e agora ganha "+String.valueOf(getSalario()));
     }
-
     public String demitir(){
         return(getNome()+" foi demitido!");
     }

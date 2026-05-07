@@ -1,5 +1,6 @@
-package farmacia;
+package farmacia.ClassController;
 
+import farmacia.App;
 import javafx.fxml.FXML;
 import java.io.IOException;
 import javafx.scene.control.Button;

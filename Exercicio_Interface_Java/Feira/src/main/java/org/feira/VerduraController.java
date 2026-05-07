@@ -43,7 +43,7 @@ public class VerduraController {
 
     @FXML
     void cadVerdura(ActionEvent event) {
-        Verdura verdura = new Verdura(txtNome.getText(),Integer.parseInt(txtQuantidade.getText()),Double.parseDouble(txtValor.getText()));
+        verdura = new Verdura(txtNome.getText(),Integer.parseInt(txtQuantidade.getText()),Double.parseDouble(txtValor.getText()));
         String sql = "INSERT INTO verdura (nome, quantidade, valor) VALUES (?, ?, ?)";
         try (Connection conn = ConexaoBD.conectar();
              PreparedStatement stmt = conn.prepareStatement(sql)) {

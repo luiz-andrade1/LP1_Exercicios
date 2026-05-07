@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="farmacia.RemedioController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="farmacia.ClassController.RemedioController">
    <children>
       <Label alignment="CENTER" layoutX="198.0" layoutY="50.0" prefHeight="42.0" prefWidth="218.0" text="Cadastro Remedio" textAlignment="CENTER" AnchorPane.bottomAnchor="308.0" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="184.0" AnchorPane.topAnchor="50.0">
          <font>

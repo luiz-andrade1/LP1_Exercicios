@@ -1,4 +1,4 @@
-package farmacia;
+package farmacia.ClassModel;
 
 public class Alimento {
 

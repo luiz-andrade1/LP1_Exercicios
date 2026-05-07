@@ -1,5 +1,8 @@
-package farmacia;
+package farmacia.ClassController;
 
+import farmacia.App;
+import farmacia.ClassModel.Alimento;
+import farmacia.DAO.AlimentoDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -43,18 +46,9 @@ public class AlimentoController {
 
     @FXML
     void cadAlimento(ActionEvent event) {
-        alimento = new Alimento (txtNome.getText(), Integer.parseInt(txtPeso.getText()), Double.parseDouble(txtValor.getText()));
-        String sql = "INSERT INTO alimento (nome, peso, valor) VALUES (?, ?, ?)";
-        try (Connection conn = ConexaoBD.conectar();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, alimento.getNome());
-            stmt.setInt(2, alimento.getPeso());
-            stmt.setDouble(3, alimento.getValor());
-            stmt.executeUpdate();
-            System.out.println("Salvo no banco com sucesso!");
-        } catch (Exception e) {
-            System.err.println("Erro ao salvar no banco: " + e.getMessage());
-        }
+        AlimentoDAO dao = new AlimentoDAO();
+        alimento = new Alimento(txtNome.getText(), Integer.parseInt(txtPeso.getText()), Double.parseDouble(txtValor.getText()));
+        dao.cadastrarAlimento(alimento);
         txtNome.clear();
         txtPeso.clear();
         txtValor.clear();
