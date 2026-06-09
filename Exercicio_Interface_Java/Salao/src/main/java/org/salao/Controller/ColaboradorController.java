@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.salao.App;
+import org.salao.DAO.ColaboradorDAO;
 import org.salao.DataBaseConnection.ConexaoBD;
 import org.salao.Model.Colaborador;
 
@@ -46,18 +47,9 @@ public class ColaboradorController {
 
     @FXML
     void cadColaborador(ActionEvent event) {
+        ColaboradorDAO dao = new ColaboradorDAO();
         colaborador = new Colaborador(txtNome.getText(),txtFuncao.getText(),Double.parseDouble(txtSalario.getText()));
-        String sql = "INSERT INTO colaborador (nome, funcao, salario) VALUES (?, ?, ?)";
-        try (Connection conn = ConexaoBD.conectar();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, colaborador.getNome());
-            stmt.setString(2, colaborador.getFuncao());
-            stmt.setDouble(3, colaborador.getSalario());
-            stmt.executeUpdate();
-            System.out.println("Salvo no banco com sucesso!");
-        } catch (Exception e) {
-            System.err.println("Erro ao salvar no banco: " + e.getMessage());
-        }
+        dao.cadastrarColaborador(colaborador);
         txtNome.clear();
         txtFuncao.clear();
         txtSalario.clear();

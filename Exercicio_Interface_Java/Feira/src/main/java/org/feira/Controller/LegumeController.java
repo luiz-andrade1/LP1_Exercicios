@@ -6,7 +6,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.feira.App;
+import org.feira.DAO.FrutaDAO;
+import org.feira.DAO.LegumeDAO;
 import org.feira.DataBaseConnection.ConexaoBD;
+import org.feira.Model.Fruta;
 import org.feira.Model.Legume;
 
 import java.io.IOException;
@@ -46,18 +49,9 @@ public class LegumeController {
 
     @FXML
     void cadLegume(ActionEvent event) {
-        legume = new Legume (txtNome.getText(),Integer.parseInt(txtQuantidade.getText()),Double.parseDouble(txtValor.getText()));
-        String sql = "INSERT INTO legume (nome, quantidade, valor) VALUES (?, ?, ?)";
-        try (Connection conn = ConexaoBD.conectar();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, legume.getNome());
-            stmt.setInt(2, legume.getQuantidade());
-            stmt.setDouble(3, legume.getValor());
-            stmt.executeUpdate();
-            System.out.println("Salvo no banco com sucesso!");
-        } catch (Exception e) {
-            System.err.println("Erro ao salvar no banco: " + e.getMessage());
-        }
+        LegumeDAO dao = new LegumeDAO();
+        legume = new Legume(txtNome.getText(),Integer.parseInt(txtQuantidade.getText()),Double.parseDouble(txtValor.getText()));
+        dao.cadastrarLegume(legume);
         txtNome.clear();
         txtQuantidade.clear();
         txtValor.clear();

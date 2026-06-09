@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.salao.App;
+import org.salao.DAO.ServicoDAO;
 import org.salao.DataBaseConnection.ConexaoBD;
 import org.salao.Model.Servico;
 
@@ -46,18 +47,9 @@ public class ServicoController {
 
     @FXML
     void cadServico(ActionEvent event) {
+        ServicoDAO dao = new ServicoDAO();
         servico = new Servico(txtNome.getText(),Double.parseDouble(txtValor.getText()),txtResponsavel.getText());
-        String sql = "INSERT INTO servico (nome, valor, responsavel) VALUES (?, ?, ?)";
-        try (Connection conn = ConexaoBD.conectar();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, servico.getNome());
-            stmt.setDouble(2, servico.getValor());
-            stmt.setString(3, servico.getResponsavel());
-            stmt.executeUpdate();
-            System.out.println("Salvo no banco com sucesso!");
-        } catch (Exception e) {
-            System.err.println("Erro ao salvar no banco: " + e.getMessage());
-        }
+        dao.cadastrarServico(servico);
         txtNome.clear();
         txtValor.clear();
         txtResponsavel.clear();
