@@ -1,18 +1,18 @@
-package org.feira;
+package org.feira.Model;
 
-public class Fruta {
+public class Legume {
 
     private String nome;
     private Integer quantidade;
     private Double valor;
 
-    public Fruta(String nome, Integer quantidade, Double valor) {
+    public Legume(String nome, Integer quantidade, Double valor){
         this.nome = nome;
         this.quantidade = quantidade;
         this.valor = valor;
     }
 
-    public Fruta(){}
+    public Legume(){}
 
     public String getNome(){
         return nome;
@@ -31,14 +31,16 @@ public class Fruta {
     public Double getValor(){
         return valor;
     }
-    public void setValor(){this.valor = valor;}
-
-    public String vendeu(){
-        return (getNome()+" foi vendido em sua totalidade");
+    public void setValor(){
+        this.valor = valor;
     }
 
-    public String quantidadeSobrando(){
-        return ("Restam "+String.valueOf(getQuantidade())+" da fruta "+getNome())+".";
+    public String vendeu(){
+        return (getNome()+" foi vendido e agora restam "+String.valueOf(getQuantidade()-1));
+    }
+
+    public String mostrarQuantidade(){
+        return ("Ha "+String.valueOf(getQuantidade())+" do legume "+getNome()+" em estoque.");
     }
 
     public String mostrarValor(){

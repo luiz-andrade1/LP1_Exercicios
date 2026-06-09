@@ -1,4 +1,4 @@
-package org.salao;
+package org.salao.DataBaseConnection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

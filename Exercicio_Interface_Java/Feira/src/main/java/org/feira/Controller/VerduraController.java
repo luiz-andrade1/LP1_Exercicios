@@ -1,18 +1,21 @@
-package org.feira;
+package org.feira.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import org.feira.App;
+import org.feira.DataBaseConnection.ConexaoBD;
+import org.feira.Model.Verdura;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class LegumeController {
+public class VerduraController {
 
-    Legume legume;
+    Verdura verdura;
 
     @FXML
     private Button btCadastro;
@@ -42,14 +45,14 @@ public class LegumeController {
     private TextField txtValor;
 
     @FXML
-    void cadLegume(ActionEvent event) {
-        legume = new Legume (txtNome.getText(),Integer.parseInt(txtQuantidade.getText()),Double.parseDouble(txtValor.getText()));
-        String sql = "INSERT INTO legume (nome, quantidade, valor) VALUES (?, ?, ?)";
+    void cadVerdura(ActionEvent event) {
+        verdura = new Verdura(txtNome.getText(),Integer.parseInt(txtQuantidade.getText()),Double.parseDouble(txtValor.getText()));
+        String sql = "INSERT INTO verdura (nome, quantidade, valor) VALUES (?, ?, ?)";
         try (Connection conn = ConexaoBD.conectar();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, legume.getNome());
-            stmt.setInt(2, legume.getQuantidade());
-            stmt.setDouble(3, legume.getValor());
+            stmt.setString(1, verdura.getNome());
+            stmt.setInt(2, verdura.getQuantidade());
+            stmt.setDouble(3, verdura.getValor());
             stmt.executeUpdate();
             System.out.println("Salvo no banco com sucesso!");
         } catch (Exception e) {
@@ -62,23 +65,22 @@ public class LegumeController {
 
     @FXML
     void mostrarQuantidade(ActionEvent event) {
-        lbTexto.setText(legume.mostrarQuantidade());
+        lbTexto.setText(verdura.mostrarQuantidade());
     }
 
     @FXML
     void mostrarValor(ActionEvent event) {
-        lbTexto.setText(legume.mostrarValor());
+        lbTexto.setText(verdura.mostrarValor());
     }
 
     @FXML
     void vendeu(ActionEvent event) {
-        lbTexto.setText(legume.vendeu());
+        lbTexto.setText(verdura.vendeu());
     }
 
     @FXML
     void switchToFeira(ActionEvent event) throws IOException {
         App.setRoot("feira");
     }
-
 
 }

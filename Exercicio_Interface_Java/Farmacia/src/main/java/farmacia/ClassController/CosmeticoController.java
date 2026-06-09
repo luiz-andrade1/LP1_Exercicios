@@ -1,7 +1,10 @@
 package farmacia.ClassController;
 
 import farmacia.App;
+import farmacia.ClassModel.Alimento;
 import farmacia.ClassModel.Cosmetico;
+import farmacia.DAO.AlimentoDAO;
+import farmacia.DAO.CosmeticoDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -45,21 +48,12 @@ public class CosmeticoController {
 
     @FXML
     void cadCosmetico(ActionEvent event) {
-       /* cosmetico = new Cosmetico(txtNome.getText(), Integer.parseInt(txtPeso.getText()), Double.parseDouble(txtValor.getText()));
-        String sql = "INSERT INTO cosmetico (nome, peso, valor) VALUES (?, ?, ?)";
-        try (Connection conn = ConexaoBD.conectar();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, cosmetico.getNome());
-            stmt.setInt(2, cosmetico.getPeso());
-            stmt.setDouble(3, cosmetico.getValor());
-            stmt.executeUpdate();
-            System.out.println("Salvo no banco com sucesso!");
-        } catch (Exception e) {
-            System.err.println("Erro ao salvar no banco: " + e.getMessage());
-        }
+        CosmeticoDAO dao = new CosmeticoDAO();
+        cosmetico = new Cosmetico(txtNome.getText(), Integer.parseInt(txtPeso.getText()), Double.parseDouble(txtValor.getText()));
+        dao.cadastrarCosmetico(cosmetico);
         txtNome.clear();
         txtPeso.clear();
-        txtValor.clear();*/
+        txtValor.clear();
     }
 
     @FXML

@@ -1,4 +1,4 @@
-package org.feira;
+package org.feira.Model;
 
 public class Verdura {
 

@@ -1,8 +1,9 @@
-package org.salao;
+package org.salao.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import org.salao.App;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package org.salao;
+package org.salao.Model;
 
 public class Cliente {
 

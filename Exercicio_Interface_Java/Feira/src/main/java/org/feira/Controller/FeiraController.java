@@ -1,8 +1,9 @@
-package org.feira;
+package org.feira.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import org.feira.App;
 
 import java.io.IOException;
 

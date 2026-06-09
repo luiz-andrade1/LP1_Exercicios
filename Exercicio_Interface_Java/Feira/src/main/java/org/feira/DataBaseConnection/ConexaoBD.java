@@ -1,4 +1,4 @@
-package org.feira;
+package org.feira.DataBaseConnection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

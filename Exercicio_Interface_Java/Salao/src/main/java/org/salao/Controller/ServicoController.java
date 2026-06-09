@@ -1,10 +1,13 @@
-package org.salao;
+package org.salao.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import org.salao.App;
+import org.salao.DataBaseConnection.ConexaoBD;
+import org.salao.Model.Servico;
 
 import java.io.IOException;
 import java.sql.Connection;
