@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.salao.controller.SalaoController">
+   <children>
+      <Label alignment="CENTER" prefHeight="32.0" prefWidth="600.0" text="SALÃO" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="btVoltarCentral" layoutX="14.0" layoutY="366.0" mnemonicParsing="false" onAction="#switchToCentral" text="Voltar" />
+      <TabPane fx:id="painelOpcoes" layoutY="32.0" prefHeight="334.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="opcaoCliente" text="Cliente">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="232.0" prefWidth="452.0">
+                     <children>
+                        <AnchorPane layoutX="345.0" layoutY="14.0" prefHeight="281.0" prefWidth="241.0" style="-fx-background-color: #dfe4ea;">
+                           <children>
+                              <Label alignment="CENTER" layoutX="50.0" layoutY="2.0" prefHeight="25.0" prefWidth="141.0" text="PESQUISAR CLIENTE" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="barraPesquisaCliente" layoutX="14.0" layoutY="33.0" promptText="nome do cliente" />
+                              <Button fx:id="btBuscarCliente" layoutX="175.0" layoutY="33.0" mnemonicParsing="false" onAction="#buscarCliente" text="Buscar" />
+                              <TableView fx:id="tabelaBuscaCliente" layoutX="15.0" layoutY="67.0" prefHeight="200.0" prefWidth="212.0">
+                                 <columns>
+                                    <TableColumn fx:id="colunaIDCliente" prefWidth="29.0" text="ID" />
+                                    <TableColumn fx:id="colunaNomeCliente" prefWidth="84.0" text="Nome" />
+                                    <TableColumn fx:id="colunaTipoCliente" prefWidth="48.0" text="Tipo" />
+                                    <TableColumn fx:id="colunaIdadeCliente" prefWidth="50.0" text="Idade" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="281.0" prefWidth="316.0" style="-fx-background-color: #dfe4ea;">
+                           <children>
+                              <Button fx:id="btCadastroCliente" layoutX="46.0" layoutY="233.0" mnemonicParsing="false" onAction="#cadastrarCliente" text="Cadastrar" />
+                              <Button fx:id="btEditarCliente" layoutX="137.0" layoutY="233.0" mnemonicParsing="false" onAction="#editarCliente" text="Editar" />
+                              <Button fx:id="btRemoverCliente" layoutX="207.0" layoutY="233.0" mnemonicParsing="false" onAction="#removerCliente" text="Remover" />
+                              <GridPane layoutX="46.0" layoutY="53.0" prefHeight="133.0" prefWidth="216.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="51.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="165.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="ID" />
+                                    <TextField fx:id="txtIDCliente" editable="false" focusTraversable="false" style="-fx-text-fill: #000000; -fx-background-color: #e5e5e5; -fx-font-weight: bold;" GridPane.columnIndex="1" />
+                                    <TextField fx:id="txtNomeCliente" promptText="Ex: Luiz" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtTipoCliente" promptText="bronze, silver ou gold" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txtIdadeCliente" promptText="Ex: 26" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Nome" GridPane.rowIndex="1" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Tipo" GridPane.rowIndex="2" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Idade" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                              <Label alignment="CENTER" layoutX="84.0" layoutY="2.0" prefHeight="25.0" prefWidth="141.0" text="GERENCIAR CLIENTE" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="opcaoColaborador" text="Colaborador">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="232.0" prefWidth="452.0">
+                     <children>
+                        <AnchorPane layoutX="345.0" layoutY="14.0" prefHeight="281.0" prefWidth="241.0" style="-fx-background-color: #dfe4ea;">
+                           <children>
+                              <Label alignment="CENTER" layoutX="37.0" layoutY="2.0" prefHeight="25.0" prefWidth="169.0" text="PESQUISAR COLABORADOR" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="barraPesquisaColaborador" layoutX="14.0" layoutY="33.0" promptText="nome do colaborador" />
+                              <Button fx:id="btBuscarColaborador" layoutX="175.0" layoutY="33.0" mnemonicParsing="false" onAction="#buscarColaborador" text="Buscar" />
+                              <TableView fx:id="tabelaBuscaLColaborador" layoutX="15.0" layoutY="67.0" prefHeight="200.0" prefWidth="212.0">
+                                 <columns>
+                                    <TableColumn fx:id="colunaIDColaborador" prefWidth="29.0" text="ID" />
+                                    <TableColumn fx:id="colunaNomeColaborador" prefWidth="84.0" text="Nome" />
+                                    <TableColumn fx:id="colunaFuncaoColaborador" prefWidth="48.0" text="Função" />
+                                    <TableColumn fx:id="colunaSalarioColaborador" prefWidth="50.0" text="Salário" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="281.0" prefWidth="316.0" style="-fx-background-color: #dfe4ea;">
+                           <children>
+                              <Button fx:id="btCadastroColaborador" layoutX="46.0" layoutY="233.0" mnemonicParsing="false" onAction="#cadastrarColaborador" text="Cadastrar" />
+                              <Button fx:id="btEditarColaborador" layoutX="137.0" layoutY="233.0" mnemonicParsing="false" onAction="#editarColaborador" text="Editar" />
+                              <Button fx:id="btRemoverColaborador" layoutX="207.0" layoutY="233.0" mnemonicParsing="false" onAction="#removerColaborador" text="Remover" />
+                              <GridPane layoutX="46.0" layoutY="53.0" prefHeight="133.0" prefWidth="216.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="51.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="165.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="ID" />
+                                    <TextField fx:id="txtNomeColaborador" promptText="Ex: Adriana" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtFuncaoColaborador" promptText="Ex: Cabelereira" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txtSalarioColaborador" promptText="Ex: 2000" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Nome" GridPane.rowIndex="1" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Função" GridPane.rowIndex="2" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Salário" GridPane.rowIndex="3" />
+                                    <TextField fx:id="txtIDColaborador" editable="false" focusTraversable="false" style="-fx-text-fill: #000000; -fx-background-color: #e5e5e5; -fx-font-weight: bold;" GridPane.columnIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <Label alignment="CENTER" layoutX="72.0" layoutY="2.0" prefHeight="25.0" prefWidth="172.0" text="GERENCIAR COLABORADOR" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="opcaoServico" text="Serviço">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="232.0" prefWidth="452.0">
+                     <children>
+                        <AnchorPane layoutX="345.0" layoutY="14.0" prefHeight="281.0" prefWidth="241.0" style="-fx-background-color: #dfe4ea;">
+                           <children>
+                              <Label alignment="CENTER" layoutX="50.0" layoutY="2.0" prefHeight="25.0" prefWidth="141.0" text="PESQUISAR SERVIÇO" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="barraPesquisaServico" layoutX="14.0" layoutY="33.0" promptText="nome do serviço" />
+                              <Button fx:id="btBuscarServico" layoutX="175.0" layoutY="33.0" mnemonicParsing="false" onAction="#buscarServico" text="Buscar" />
+                              <TableView fx:id="tabelaBuscaServico" layoutX="15.0" layoutY="67.0" prefHeight="200.0" prefWidth="212.0">
+                                 <columns>
+                                    <TableColumn fx:id="colunaIDServico" prefWidth="24.0" text="ID" />
+                                    <TableColumn fx:id="colunaNomeServico" prefWidth="69.0" text="Nome" />
+                                    <TableColumn fx:id="colunaValorServico" prefWidth="40.0" text="Valor" />
+                                    <TableColumn fx:id="colunaResponsavelServico" prefWidth="78.0" text="Responsável" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="281.0" prefWidth="316.0" style="-fx-background-color: #dfe4ea;">
+                           <children>
+                              <Button fx:id="btCadastroServico" layoutX="46.0" layoutY="233.0" mnemonicParsing="false" onAction="#cadastrarServico" text="Cadastrar" />
+                              <Button fx:id="btEditarServico" layoutX="137.0" layoutY="233.0" mnemonicParsing="false" onAction="#editarServico" text="Editar" />
+                              <Button fx:id="btRemoverServico" layoutX="207.0" layoutY="233.0" mnemonicParsing="false" onAction="#removerServico" text="Remover" />
+                              <GridPane layoutX="46.0" layoutY="53.0" prefHeight="133.0" prefWidth="216.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="51.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="165.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="ID" />
+                                    <TextField fx:id="txtNomeServico" promptText="Ex: Corte" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtValorServico" promptText="Ex: 50" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txtResponsavelServico" promptText="Ex: Adriana" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Nome" GridPane.rowIndex="1" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Valor" GridPane.rowIndex="2" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Resp." GridPane.rowIndex="3" />
+                                    <TextField fx:id="txtIDServico" editable="false" focusTraversable="false" style="-fx-text-fill: #000000; -fx-background-color: #e5e5e5; -fx-font-weight: bold;" GridPane.columnIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <Label alignment="CENTER" layoutX="84.0" layoutY="2.0" prefHeight="25.0" prefWidth="141.0" text="GERENCIAR SERVIÇO" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

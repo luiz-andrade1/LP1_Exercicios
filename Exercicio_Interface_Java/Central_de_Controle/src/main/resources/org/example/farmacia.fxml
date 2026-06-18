@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.farmacia.controller.FarmaciaController">
+   <children>
+      <Label alignment="CENTER" prefHeight="32.0" prefWidth="600.0" text="FARMACIA" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="btVoltarCentral" layoutX="14.0" layoutY="366.0" mnemonicParsing="false" onAction="#switchToCentral" text="Voltar" />
+      <TabPane fx:id="painelOpcoes" layoutY="32.0" prefHeight="334.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="opcaoRemedio" text="Remédio">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="232.0" prefWidth="452.0">
+                     <children>
+                        <AnchorPane layoutX="345.0" layoutY="14.0" prefHeight="281.0" prefWidth="241.0" style="-fx-background-color: #dfe4ea;">
+                           <children>
+                              <Label alignment="CENTER" layoutX="50.0" layoutY="2.0" prefHeight="25.0" prefWidth="141.0" text="PESQUISAR REMÉDIOS" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="barraPesquisaRemedio" layoutX="14.0" layoutY="33.0" promptText="nome do remédio" />
+                              <Button fx:id="btBuscarRemedio" layoutX="175.0" layoutY="33.0" mnemonicParsing="false" onAction="#buscarRemedio" text="Buscar" />
+                              <TableView fx:id="tabelaBuscaRemedio" layoutX="15.0" layoutY="67.0" prefHeight="200.0" prefWidth="212.0">
+                                <columns>
+                                  <TableColumn fx:id="colunaIDRemedio" prefWidth="29.0" text="ID" />
+                                  <TableColumn fx:id="colunaNomeRemedio" prefWidth="84.0" text="Nome" />
+                                    <TableColumn fx:id="colunaPesoRemedio" prefWidth="48.0" text="Peso" />
+                                    <TableColumn fx:id="colunaValorRemedio" prefWidth="50.0" text="Valor" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="281.0" prefWidth="316.0" style="-fx-background-color: #dfe4ea;">
+                           <children>
+                              <Button fx:id="btCadastroRemedio" layoutX="46.0" layoutY="233.0" mnemonicParsing="false" onAction="#cadastrarRemedio" text="Cadastrar" />
+                              <Button fx:id="btEditarRemedio" layoutX="137.0" layoutY="233.0" mnemonicParsing="false" onAction="#editarRemedio" text="Editar" />
+                              <Button fx:id="btRemoverRemedio" layoutX="207.0" layoutY="233.0" mnemonicParsing="false" onAction="#removerRemedio" text="Remover" />
+                              <GridPane layoutX="46.0" layoutY="53.0" prefHeight="133.0" prefWidth="216.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="51.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="165.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="ID" />
+                                    <TextField fx:id="txtIDRemedio" editable="false" focusTraversable="false" style="-fx-text-fill: #000000; -fx-background-color: #e5e5e5; -fx-font-weight: bold;" GridPane.columnIndex="1" />
+                                    <TextField fx:id="txtNomeRemedio" promptText="Ex: Dipirona" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtPesoRemedio" promptText="Ex: 200" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txtValorRemedio" promptText="Ex: 10" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Nome" GridPane.rowIndex="1" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Peso" GridPane.rowIndex="2" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Valor" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                              <Label alignment="CENTER" layoutX="84.0" layoutY="2.0" prefHeight="25.0" prefWidth="141.0" text="GERENCIAR REMÉDIOS" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="opcaoCosmetico" text="Cosmetico">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="232.0" prefWidth="452.0">
+                     <children>
+                        <AnchorPane layoutX="345.0" layoutY="14.0" prefHeight="281.0" prefWidth="241.0" style="-fx-background-color: #dfe4ea;">
+                           <children>
+                              <Label alignment="CENTER" layoutX="43.0" layoutY="2.0" prefHeight="25.0" prefWidth="155.0" text="PESQUISAR COSMÉTICOS" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="barraPesquisaCosmetico" layoutX="14.0" layoutY="33.0" promptText="nome do cosmético" />
+                              <Button fx:id="btBuscarCosmetico" layoutX="175.0" layoutY="33.0" mnemonicParsing="false" onAction="#buscarCosmetico" text="Buscar" />
+                              <TableView fx:id="tabelaBuscaCosmetico" layoutX="15.0" layoutY="67.0" prefHeight="200.0" prefWidth="212.0">
+                                 <columns>
+                                    <TableColumn fx:id="colunaIDCosmetico" prefWidth="29.0" text="ID" />
+                                    <TableColumn fx:id="colunaNomeCosmetico" prefWidth="84.0" text="Nome" />
+                                    <TableColumn fx:id="colunaPesoCosmetico" prefWidth="48.0" text="Peso" />
+                                    <TableColumn fx:id="colunaValorCosmetico" prefWidth="50.0" text="Valor" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="281.0" prefWidth="316.0" style="-fx-background-color: #dfe4ea;">
+                           <children>
+                              <Button fx:id="btCadastroCosmetico" layoutX="46.0" layoutY="233.0" mnemonicParsing="false" onAction="#cadastrarCosmetico" text="Cadastrar" />
+                              <Button fx:id="btEditarCosmetico" layoutX="137.0" layoutY="233.0" mnemonicParsing="false" onAction="#editarCosmetico" text="Editar" />
+                              <Button fx:id="btRemoverCosmetico" layoutX="207.0" layoutY="233.0" mnemonicParsing="false" onAction="#removerCosmetico" text="Remover" />
+                              <GridPane layoutX="46.0" layoutY="53.0" prefHeight="133.0" prefWidth="216.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="51.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="165.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="ID" />
+                                    <TextField fx:id="txtNomeCosmetico" promptText="Ex: Creme" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtPesoCosmetico" promptText="Ex: 200" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txtValorCosmetico" promptText="Ex: 10" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Nome" GridPane.rowIndex="1" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Peso" GridPane.rowIndex="2" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Valor" GridPane.rowIndex="3" />
+                                    <TextField fx:id="txtIDCosmetico" editable="false" focusTraversable="false" style="-fx-text-fill: #000000; -fx-background-color: #e5e5e5; -fx-font-weight: bold;" GridPane.columnIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <Label alignment="CENTER" layoutX="80.0" layoutY="2.0" prefHeight="25.0" prefWidth="156.0" text="GERENCIAR COSMÉTICOS" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="opcaoAlimento" text="Alimento">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="232.0" prefWidth="452.0">
+                     <children>
+                        <AnchorPane layoutX="345.0" layoutY="14.0" prefHeight="281.0" prefWidth="241.0" style="-fx-background-color: #dfe4ea;">
+                           <children>
+                              <Label alignment="CENTER" layoutX="50.0" layoutY="2.0" prefHeight="25.0" prefWidth="141.0" text="PESQUISAR ALIMENTOS" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="barraPesquisaAlimento" layoutX="14.0" layoutY="33.0" promptText="nome do alimento" />
+                              <Button fx:id="btBuscarAlimento" layoutX="175.0" layoutY="33.0" mnemonicParsing="false" onAction="#buscarAlimento" text="Buscar" />
+                              <TableView fx:id="tabelaBuscaAlimento" layoutX="15.0" layoutY="67.0" prefHeight="200.0" prefWidth="212.0">
+                                 <columns>
+                                    <TableColumn fx:id="colunaIDAlimento" prefWidth="29.0" text="ID" />
+                                    <TableColumn fx:id="colunaNomeAlimento" prefWidth="84.0" text="Nome" />
+                                    <TableColumn fx:id="colunaPesoAlimento" prefWidth="48.0" text="Peso" />
+                                    <TableColumn fx:id="colunaValorAlimento" prefWidth="50.0" text="Valor" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="281.0" prefWidth="316.0" style="-fx-background-color: #dfe4ea;">
+                           <children>
+                              <Button fx:id="btCadastroAlimento" layoutX="46.0" layoutY="233.0" mnemonicParsing="false" onAction="#cadastrarAlimento" text="Cadastrar" />
+                              <Button fx:id="btEditarAlimento" layoutX="137.0" layoutY="233.0" mnemonicParsing="false" onAction="#editarAlimento" text="Editar" />
+                              <Button fx:id="btRemoverAlimento" layoutX="207.0" layoutY="233.0" mnemonicParsing="false" onAction="#removerAlimento" text="Remover" />
+                              <GridPane layoutX="46.0" layoutY="53.0" prefHeight="133.0" prefWidth="216.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="51.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="165.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="ID" />
+                                    <TextField fx:id="txtNomeAlimento" promptText="Ex: Bombom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtPesoAlimento" promptText="Ex: 200" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txtValorAlimento" promptText="Ex: 10" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Nome" GridPane.rowIndex="1" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Peso" GridPane.rowIndex="2" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="72.0" text="Valor" GridPane.rowIndex="3" />
+                                    <TextField fx:id="txtIDAlimento" editable="false" focusTraversable="false" style="-fx-text-fill: #000000; -fx-background-color: #e5e5e5; -fx-font-weight: bold;" GridPane.columnIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <Label alignment="CENTER" layoutX="84.0" layoutY="2.0" prefHeight="25.0" prefWidth="141.0" text="GERENCIAR ALIMENTOS" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
